@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/Main.css">
+</head>
+<body>
+<div class="header">
+    <h1>Unit Converter</h1>
+</div>
+<div class="input_form">
+
+    <div class="pages_options">
+        <div class="radio-text-group">
+            <a th:href="@{/length}" class="custom-link">Length</a>
+
+            <a th:href="@{/weight}" class="custom-link chosen_page">Weight</a>
+
+            <a th:href="@{/temperature}" class="custom-link">Temperature</a>
+        </div>
+    </div>
+    <form class="main_form" th:action = "@{/convert}" method="POST">
+        <div class="input_of_number">
+            <div class="input_header">
+                Enter the length to convert
+            </div>
+            <label for="convertable"></label>
+            <input type="hidden" name="logic" value="Weight_page">
+            <input type="number" step="any" id="convertable" name="value" required>
+        </div>
+        <div class="input_from_unit">
+            <div class="input_header">
+                Unit to convert from
+            </div>
+            <div class="from_unit">
+                <label for="from_unit"></label>
+                <select class="unit" id="from_unit" name="fromUnit">
+                    <option value="dram">dr</option>
+                    <option value="ounce">oz</option>
+                    <option value="pound">lb</option>
+                    <option value="short_ton">ST</option>
+                    <option value="gram">g</option>
+                    <option value="kilogram">kg</option>
+                    <option value="ton">T</option>
+                </select>
+            </div>
+        </div>
+        <div class="input_to_unit">
+            <div class="input_header">
+                Unit to convert to
+            </div>
+            <label for="to_unit"></label>
+            <select class="unit" id="to_unit" name="toUnit">
+                <option value="dram">dr</option>
+                <option value="ounce">oz</option>
+                <option value="pound">lb</option>
+                <option value="sort_ton">ST</option>
+                <option value="gram">g</option>
+                <option value="kilogram">kg</option>
+                <option value="ton">T</option>
+
+            </select>
+        </div>
+        <div>
+            <input class="convert_button" type="submit" value="Convert">
+        </div>
+    </form>
+    <div class="result" th:if="${conversionResult != null}">
+        <h3>Result:</h3>
+        <p>
+            <span th:text="${postedValue}"></span>
+            <span th:text="${postedFromUnit}"></span>
+            =
+            <strong th:text="${conversionResult}"></strong>
+            <span th:text="${postedToUnit}"></span>
+        </p>
+    </div>
+</div>
+</body>
+</html>

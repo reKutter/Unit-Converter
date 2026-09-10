@@ -1,0 +1,49 @@
+*{
+    padding-bottom: 10px;
+}
+.radio-text-group input[type="radio"] {
+    display: none;
+}
+
+/* Стилізуємо текст як кнопки */
+.radio-text-group label {
+
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.radio-text-group input[type="radio"]:checked + label {
+    color: #007bff;
+    border-color: #0056b3;
+}
+.unit{
+    width: 75px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.input_form{
+    display: block;
+}
+.convert_button{
+    padding : 5px 15px;
+    font-size: 18px;
+}
+.custom-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    padding: 5px 10px;
+}
+.custom-link.chosen_page{
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #007bff;
+}
